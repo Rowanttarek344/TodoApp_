@@ -30,7 +30,17 @@ class MyTheme {
         fontSize: 22,
         fontWeight: FontWeight.bold,
         color: white_color
-      )
+      ),
+        subtitle1: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: black_color
+        ),
+        subtitle2: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+            color: gray_color
+        )
     )
   );
   static ThemeData dark_theme = ThemeData(
@@ -54,6 +64,16 @@ class MyTheme {
               fontSize: 22,
               fontWeight: FontWeight.bold,
               color: black_color
+          ),
+          subtitle1: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: white_color
+          ),
+          subtitle2: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.bold,
+              color: gray_color
           )
       )
   );
