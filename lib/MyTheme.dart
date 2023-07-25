@@ -21,7 +21,9 @@ class MyTheme {
     scaffoldBackgroundColor: primary_light_color,
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       selectedItemColor: blue_color,
-      unselectedItemColor: gray_color
+      unselectedItemColor: gray_color,
+        backgroundColor: Colors.transparent,
+      elevation: 0
     ),
     primaryTextTheme: TextTheme(
       headline1: TextStyle(
@@ -40,7 +42,12 @@ class MyTheme {
       scaffoldBackgroundColor: primary_dark_color,
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
           selectedItemColor: blue_color,
-          unselectedItemColor: gray_color
+          unselectedItemColor: gray_color,
+          backgroundColor: Colors.transparent,
+          elevation: 0
+      ),
+      floatingActionButtonTheme: FloatingActionButtonThemeData(
+        backgroundColor: blue_color
       ),
       primaryTextTheme: TextTheme(
           headline1: TextStyle(
