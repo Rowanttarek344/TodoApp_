@@ -12,7 +12,7 @@ class home_screen extends StatefulWidget {
 
 class _home_screenState extends State<home_screen> {
   List<Widget> tabs=[
-    settings_tab(),task_list_tab()
+    task_list_tab(),settings_tab()
   ];
 
   int selected_index=0;
@@ -30,27 +30,44 @@ class _home_screenState extends State<home_screen> {
           color: MyTheme.blue_color,
         ),
       ),
+      floatingActionButton:Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.white,width: 6,style: BorderStyle.solid),
+          borderRadius: BorderRadius.circular(50)
+        ),
+        child: FloatingActionButton(
+          onPressed: (){},
+          child:Icon(Icons.add,size: 35,) ,
+        ),
+
+      ) ,
+
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
 
       bottomNavigationBar: ClipRRect(
         borderRadius:BorderRadius.circular(16),
 
-        child: BottomNavigationBar(
-          currentIndex: selected_index,
-          onTap: (value) => setState(() {
-            selected_index=value;
+        child: BottomAppBar(
+          shape: CircularNotchedRectangle(),
+          notchMargin: 8,
+          child:BottomNavigationBar(
+            currentIndex: selected_index,
+            onTap: (value) => setState(() {
+              selected_index=value;
 
-          }),
-          items: [
-            BottomNavigationBarItem(
-                icon:ImageIcon(AssetImage('assets/images/ic_task_list.png'),size: 30,),
-              label: ''
-            ),
-            BottomNavigationBarItem(icon:ImageIcon(AssetImage('assets/images/ic_settings.png'),size: 30,),
-            label:''
-            ),
+            }),
+            items: [
+              BottomNavigationBarItem(
+                  icon:ImageIcon(AssetImage('assets/images/ic_task_list.png'),size: 30,),
+                  label: ''
+              ),
+              BottomNavigationBarItem(icon:ImageIcon(AssetImage('assets/images/ic_settings.png'),size: 30,),
+                  label:''
+              ),
 
-          ],
-        ),
+            ],
+          ) ,
+        )
       ),
       body:tabs[selected_index]
     );
